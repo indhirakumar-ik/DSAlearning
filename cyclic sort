@@ -1,0 +1,37 @@
+import java.util.Arrays;
+
+public class CyclicSort {
+
+    public static void cyclicSort(int[] arr) {
+        int i = 0;
+        
+        while (i < arr.length) {
+            // Calculate the correct index where the current element should be
+            // For range 1 to N: index = value - 1
+            int correctIndex = arr[i] - 1;
+
+            // If the element is not at its correct position, swap it
+            if (arr[i] != arr[correctIndex]) {
+                swap(arr, i, correctIndex);
+            } else {
+                // Otherwise, move to the next index
+                i++;
+            }
+        }
+    }
+
+    // Helper method to swap elements at two indices
+    private static void swap(int[] arr, int first, int second) {
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {5, 2, 4, 1, 3};
+        
+        System.out.println("Before sorting: " + Arrays.toString(arr));
+        cyclicSort(arr);
+        System.out.println("After sorting: " + Arrays.toString(arr));
+    }
+}
