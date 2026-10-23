@@ -19,7 +19,7 @@ public class BinarySearch {
         if(count==1){
             System.out.println("Element is in the Array");
         }else{
-            System.out.println("Element is not in the Array");
+            System.out.println("Element is not in the Array ");
         }
     }
 }
